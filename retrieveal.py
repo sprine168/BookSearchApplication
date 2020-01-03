@@ -30,7 +30,7 @@ def main():
     ## TODO create an excel handler or database handler that will put the results into a database to 
     ## Maintain the values for long term storage and to get back the total stats on pages read and stuff
 
-    urlData = "https://www.googleapis.com/books/v1/volumes?q=regr"
+    urlData = "https://www.googleapis.com/books/v1/volumes?q=r"
     jsonData = getResponse(urlData)
 
     # Getting just the volume information for the books
