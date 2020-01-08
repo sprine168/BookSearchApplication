@@ -6,15 +6,14 @@ from Model.fetcher import getResponse
 
 def searchAPI(string):
 
-
     # Making an api call that relies on the isbn number
-    urlData = "https://www.googleapis.com/books/v1/volumes?q=isbn:"+string
-    print(urlData)
+    urlData = "https://www.googleapis.com/books/v1/volumes?q=isbn:"+string.strip()
     jsonData = getResponse(urlData)
-    print(jsonData)
+    result = jsonData
 
-    # Getting just the volume information for the books
-    result = jsonData["volumeInfo"]
+    if( "volumeInfo" in jsonData.keys() ):
+        # Getting just the volume information for the books
+        result = jsonData["volumeInfo"]
 
     # Checking if title exists for this book
     if ("title" in result.keys() ):
@@ -28,4 +27,3 @@ def searchAPI(string):
     if ("pageCount" in result.keys()):
         print(result["pageCount"], "Pages")
 
-    return result
