@@ -14,7 +14,7 @@ def main():
     ## TODO put all the values after this for outputting to the GUI
 
     # Making an api call that relies on the isbn number
-    urlData = "https://www.googleapis.com/books/v1/volumes?q=isbn:1910449075"
+    urlData = "https://www.googleapis.com/books/v1/volumes?q=isbn:0198526636"
     jsonData = getResponse(urlData)
 
     # Getting just the volume information for the books
@@ -36,3 +36,4 @@ def main():
 if __name__ == '__main__':
     main()
     initGui()
+    type(13)
