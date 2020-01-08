@@ -3,7 +3,6 @@ import json
 
 from Model.fetcher import getResponse
 
-
 def searchAPI(string):
 
     # Making an api call that relies on the isbn number
@@ -26,3 +25,5 @@ def searchAPI(string):
         # Checking if pageCount exists for this book
         if ("pageCount" in result.keys()):
             print(result["pageCount"], "Pages")
+
+        return result
