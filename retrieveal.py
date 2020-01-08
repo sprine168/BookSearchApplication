@@ -1,6 +1,7 @@
 import urllib.request
 import json
 
+from BookApplicationPython.response import getResponse
 
 def getResponse(url):
 
@@ -30,7 +31,8 @@ def main():
     ## TODO create an excel handler or database handler that will put the results into a database to 
     ## Maintain the values for long term storage and to get back the total stats on pages read and stuff
 
-    urlData = "https://www.googleapis.com/books/v1/volumes?q=regrettingyou"
+    # Search criteria can be any string 10 digit ISBN number works best so far
+    urlData = "https://www.googleapis.com/books/v1/volumes?q=isbn:1910449075"
     jsonData = getResponse(urlData)
 
     # Getting just the volume information for the books
