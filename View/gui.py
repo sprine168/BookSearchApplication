@@ -2,18 +2,16 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
 
-
 from Controller.guiController import limit
-from Model.apiData import searchAPI
+from Controller.guiController import submit 
 
 def initGui():
 
 
-    def submit():
+    def search():
         '''submit is used to pass the searched information back to main to modify 
         the search api string'''
-        searchAPI(searchMessage.get())
-
+        submit(searchMessage.get())
 
     gui = Tk()
 
@@ -37,7 +35,7 @@ def initGui():
     textBox.focus()
 
     # Button to submit
-    button = Button(gui, text="Get Results!", command=submit)
+    button = Button(gui, text="Get Results!", command=search)
     button.grid(column=3, row=2)
 
     gui.mainloop()

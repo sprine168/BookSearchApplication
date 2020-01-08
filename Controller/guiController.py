@@ -1,5 +1,6 @@
 from tkinter import messagebox
-
+from Model.apiData import searchAPI
+from Model.apiData import searchAPI
 
 def limit(string):
     '''Limiting the string to a certain length in
@@ -20,3 +21,8 @@ def limit(string):
         string.set("")
 
 
+
+def submit(searchMessage):
+    '''submit is used to pass the searched information back to main to modify 
+    the search api string'''
+    searchAPI(searchMessage.strip())

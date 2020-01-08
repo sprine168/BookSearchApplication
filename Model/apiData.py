@@ -11,19 +11,18 @@ def searchAPI(string):
     jsonData = getResponse(urlData)
     result = jsonData
 
-    if( "volumeInfo" in jsonData.keys() ):
+    if("volumeInfo" in jsonData.keys()):
         # Getting just the volume information for the books
         result = jsonData["volumeInfo"]
 
-    # Checking if title exists for this book
-    if ("title" in result.keys() ):
-        print(result["title"], "Title")
+        # Checking if title exists for this book
+        if ("title" in result.keys()):
+            print(result["title"], "Title")
 
-    # Checking if author exists for this book
-    if("authors" in result.keys()):
-        print(result["authors"][0], "Author")
+        # Checking if author exists for this book
+        if("authors" in result.keys()):
+            print(result["authors"][0], "Author")
 
-    # Checking if pageCount exists for this book
-    if ("pageCount" in result.keys()):
-        print(result["pageCount"], "Pages")
-
+        # Checking if pageCount exists for this book
+        if ("pageCount" in result.keys()):
+            print(result["pageCount"], "Pages")
