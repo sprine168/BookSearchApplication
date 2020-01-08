@@ -15,17 +15,20 @@ def initGui():
         
     def updateGui(values):
 
+        textArea = Text(gui)
+        textArea.place(relx = 0, rely = 0.15, relwidth = 1, relheight = 0.7)
+
         # Checking if title exists for this book
         if ("title" in values.keys()):
-            print(values["title"], "Title")
+            textArea.insert(INSERT, "Book Title: "+values['title']+"\n")
 
         # Checking if author exists for this book
         if("authors" in values.keys()):
-            print(values["authors"][0], "Author")
+            textArea.insert(INSERT, "Author: "+values['authors'][0]+"\n")
 
         # Checking if pageCount exists for this book
         if ("pageCount" in values.keys()):
-            print(values["pageCount"], "Pages")
+            textArea.insert(END, "Page Count: "+str(values['pageCount']))
 
     
     gui = Tk()
