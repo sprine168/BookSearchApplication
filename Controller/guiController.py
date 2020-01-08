@@ -26,8 +26,8 @@ def submit(searchMessage):
     '''submit is used to pass the searched information back to main to modify 
     the search api string'''
     
-    viewData = searchAPI(searchMessage.strip())
-    return viewData
+    return searchAPI(searchMessage.strip())
+
 
 
 

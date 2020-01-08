@@ -14,16 +14,5 @@ def searchAPI(string):
         # Getting just the volume information for the books
         result = jsonData["volumeInfo"]
 
-        # Checking if title exists for this book
-        if ("title" in result.keys()):
-            print(result["title"], "Title")
 
-        # Checking if author exists for this book
-        if("authors" in result.keys()):
-            print(result["authors"][0], "Author")
-
-        # Checking if pageCount exists for this book
-        if ("pageCount" in result.keys()):
-            print(result["pageCount"], "Pages")
-
-        return result
+    return result

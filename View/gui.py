@@ -7,12 +7,27 @@ from Controller.guiController import submit
 
 def initGui():
 
-
     def search():
         '''submit is used to pass the searched information back to main to modify 
         the search api string'''
-        submit(searchMessage.get())
+        result = submit(searchMessage.get())  
+        updateGui(result)
+        
+    def updateGui(values):
 
+        # Checking if title exists for this book
+        if ("title" in values.keys()):
+            print(values["title"], "Title")
+
+        # Checking if author exists for this book
+        if("authors" in values.keys()):
+            print(values["authors"][0], "Author")
+
+        # Checking if pageCount exists for this book
+        if ("pageCount" in values.keys()):
+            print(values["pageCount"], "Pages")
+
+    
     gui = Tk()
 
     # Getting the search message while the user is typing
