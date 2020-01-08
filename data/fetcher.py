@@ -1,9 +1,15 @@
+import urllib.request
+import json
+
+
 def getResponse(url):
+
+    jsonData = url
 
     try:
         operUrl = urllib.request.urlopen(url)
 
-        if(operUrl.getcode()==200):
+        if(operUrl.getcode() == 200):
             data = operUrl.read()
             jsonData = json.loads(data)
 
