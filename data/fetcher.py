@@ -13,7 +13,7 @@ def getResponse(url):
             data = operUrl.read()
             jsonData = json.loads(data)
 
-            # Trimming jsonData to first json value searched
+            # Trimming jsonData to first json array searched
             jsonData = jsonData["items"][0]
 
         else:

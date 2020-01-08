@@ -2,24 +2,18 @@
 based on a 10-digit isbn number to allow the user to easily find this information
 based on the google api'''
 
-
 import urllib.request
 import json
 
 # Built Packages Section
 from data.fetcher import getResponse
-
-
+from gui.gui import initGui
 
 def main():
 
-    ## TODO Make a GUI that will run on this page
-    ## that will allow a value to change the search parameters
+    ## TODO put all the values after this for outputting to the GUI
 
-    ## TODO create an excel handler or database handler that will put the results into a database to 
-    ## Maintain the values for long term storage and to get back the total stats on pages read and stuff
-
-    # Search criteria can be any string 10 digit ISBN number works best so far
+    # Making an api call that relies on the isbn number
     urlData = "https://www.googleapis.com/books/v1/volumes?q=isbn:1910449075"
     jsonData = getResponse(urlData)
 
@@ -41,3 +35,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    initGui()
