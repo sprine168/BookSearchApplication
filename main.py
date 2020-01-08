@@ -6,8 +6,13 @@ import urllib.request
 import json
 
 # Built Packages Section
-from data.fetcher import getResponse
-from gui.gui import initGui
+from Model.fetcher import getResponse
+from View.gui import initGui
+
+def getSearchData(result):
+    print(result)
+
+
 
 def main():
 
@@ -36,4 +41,3 @@ def main():
 if __name__ == '__main__':
     main()
     initGui()
-    type(13)
