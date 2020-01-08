@@ -5,11 +5,13 @@ from tkinter import messagebox
 def initGui():
 
     from Controller.guiController import limit
+    from Model.apiData import searchAPI
 
     def submit():
         '''submit is used to pass the searched information back to main to modify 
         the search api string'''
-        print(searchMessage.get())
+        searchAPI(searchMessage.get())
+        print(type(searchMessage.get()))
 
 
     gui = Tk()
