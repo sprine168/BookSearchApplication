@@ -26,9 +26,43 @@ def initGui():
         if("authors" in values.keys()):
             textArea.insert(INSERT, "Author: "+values['authors'][0]+"\n")
 
+        # Checking if author exists for this book
+        if("publishedDate" in values.keys()):
+            textArea.insert(INSERT, "Published Date: "+values['publishedDate']+"\n")
+
         # Checking if pageCount exists for this book
         if ("pageCount" in values.keys()):
-            textArea.insert(END, "Page Count: "+str(values['pageCount']))
+            textArea.insert(END, "Page Count: "+str(values['pageCount'])+"\n")
+
+        textArea.insert(INSERT, "\nThis section is comma delimited for excel sheets\n\n")
+        textArea.insert(INSERT, "Book Title, Author, Page Count, Published Date,\n")
+        
+        # Checking if title exists for this book
+        if ("title" in values.keys()):
+            textArea.insert(INSERT, values['title']+",")
+        else:
+            textArea.insert(INSERT, ",")
+
+        # Checking if author exists for this book
+        if("authors" in values.keys()):
+            textArea.insert(INSERT, values['authors'][0]+",")
+        else:
+            textArea.insert(INSERT, ",")
+
+        # Checking if pageCount exists for this book
+        if ("pageCount" in values.keys()):
+            textArea.insert(INSERT, str(values['pageCount'])+",")
+        else:
+            textArea.insert(INSERT, ",")
+        
+
+        # Checking if author exists for this book
+        if("publishedDate" in values.keys()):
+            textArea.insert(END, values['publishedDate']+",")
+        else:
+            textArea.insert(END, ",")
+
+
 
     
     gui = Tk()
