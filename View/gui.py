@@ -10,10 +10,15 @@ def initGui():
     def search():
         '''submit is used to pass the searched information back to main to modify 
         the search api string'''
+        
+        
         result = submit(searchMessage.get())  
         updateGui(result)
         
     def updateGui(values):
+        '''Used for outputting the api data from the google api for. values is the dictionary that contains json values
+        that can be outputted'''
+
 
         textArea = Text(gui)
         textArea.place(relx = 0, rely = 0.15, relwidth = 1, relheight = 0.7)
